@@ -1,4 +1,9 @@
-$jpcommand = Get-Command jupytedr.exe | Select-Object -ExpandProperty Definition
+$jpcommand = Get-Command jupyter.exe | Select-Object -ExpandProperty Definition
+
+if($jpcommand -eq $null){
+    Write-Output "Could not find jupyter.exe in environment path"
+    Break
+}
 
 Write-Output $jpcommand
 
