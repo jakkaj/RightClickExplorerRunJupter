@@ -31,3 +31,13 @@ $commandText = "`"" + $jpcommand + "`" `"notebook`" `"%V`""
 createRegedit "HKCR:\Directory\Background\shell\jupyter\command" $commandText
 createRegedit "HKCR:\Directory\shell\jupyter\command" $commandText
 
+$currentPath = (Get-Item -Path ".\" -Verbose).FullName
+
+$jpicon = "$($currentPath)\favicon.ico"
+Write-Output $jpicon
+#set icons
+New-ItemProperty -Path "HKCR:\Directory\Background\shell\jupyter" -Name "Icon" -Value $jpicon `
+        -PropertyType String -Force | Out-Null    
+
+New-ItemProperty -Path "HKCR:\Directory\shell\jupyter" -Name "Icon" -Value $jpicon `
+        -PropertyType String -Force | Out-Null  
