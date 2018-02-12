@@ -35,7 +35,7 @@ $currentPath = (Get-Item -Path ".\" -Verbose).FullName
 
 #change to favicon-notebook.ico for alternative icon
 $jpicon = "$($currentPath)\favicon.ico"
-Write-Output $jpicon
+
 #set icons
 New-ItemProperty -Path "HKCR:\Directory\Background\shell\jupyter" -Name "Icon" -Value $jpicon `
         -PropertyType String -Force | Out-Null    
