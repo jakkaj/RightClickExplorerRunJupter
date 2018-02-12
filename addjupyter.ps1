@@ -33,6 +33,7 @@ createRegedit "HKCR:\Directory\shell\jupyter\command" $commandText
 
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
 
+#change to favicon-notebook.ico for alternative icon
 $jpicon = "$($currentPath)\favicon.ico"
 Write-Output $jpicon
 #set icons
